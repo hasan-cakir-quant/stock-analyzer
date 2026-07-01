@@ -119,8 +119,8 @@ def rolling_ttm_series(quarters: list[Quarter], field: str) -> list[Decimal]:
 class TTMWindow:
     """One trailing-twelve-month window — total + the 4 quarters that compose it.
 
-    Used by callers (currently DCF) that want to surface the breakdown of a
-    CAGR calculation, not just the final number.
+    Used by callers that want to surface the breakdown of a CAGR calculation,
+    not just the final number.
     """
 
     period_start: str  # oldest quarter in the window, e.g. "2022-Q1"

@@ -13,8 +13,10 @@ recorded — rather than a single opaque number.
 
 ## Features
 
-- **Multiple valuation models** — DCF, P/E, EV/EBIT, EV/EBITDA, EV/FCF, and
-  price-to-book, each driven by configurable, reusable parameter templates.
+- **Multiple valuation models** — P/E, price-to-book, EV/EBITDA, EV/EBIT, and
+  EV/FCF, each driven by configurable, reusable parameter templates. Every
+  model's fair value is combined into an average/median with upside vs. the
+  current price.
 - **Composite grading** — an aggregate grade built from sub-scores for
   profitability, financial strength, valuation, growth, efficiency, safety,
   and dividend.
