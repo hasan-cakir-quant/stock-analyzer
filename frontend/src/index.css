@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Dark theme is the only theme in v1 (REQUIREMENTS §4.6).
+ * Tokens use the shadcn/ui colour scheme so future shadcn components drop in
+ * without further configuration.
+ */
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 22% 78%;
+
+    --accent: 217 33% 20%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 217 91% 60%;
+
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body,
+  #root {
+    @apply h-full;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+}
+
+/* Tiny styling for the in-house markdown preview (lib/markdown.ts). */
+.markdown-preview h1 {
+  @apply mb-2 text-lg font-semibold;
+}
+.markdown-preview h2 {
+  @apply mb-1.5 mt-2 text-base font-semibold;
+}
+.markdown-preview h3 {
+  @apply mb-1 mt-2 text-sm font-semibold uppercase tracking-wide text-muted-foreground;
+}
+.markdown-preview p {
+  @apply mb-2 leading-relaxed last:mb-0;
+}
+.markdown-preview ul {
+  @apply mb-2 list-disc space-y-0.5 pl-5 last:mb-0;
+}
+.markdown-preview a {
+  @apply text-primary underline-offset-2 hover:underline;
+}
+.markdown-preview code {
+  @apply rounded bg-muted/40 px-1 py-0.5 font-mono text-xs;
+}
+.markdown-preview strong {
+  @apply font-semibold;
+}
+.markdown-preview em {
+  @apply italic;
+}
